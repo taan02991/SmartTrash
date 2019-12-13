@@ -1,3 +1,6 @@
+# ignore metadata
+.metadata
+
 # ignore every file in SmartTrashSTM
 SmartTrashSTM/*
 

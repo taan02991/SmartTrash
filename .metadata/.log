@@ -87,3 +87,43 @@ java.net.UnknownHostException: download.eclipse.org
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-12-13 12:17:06.853
 !MESSAGE Indexed 'SmartTrashSTM' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2019-12-13 17:35:50.377 -----------------------------------------------
+eclipse.buildId=Version 1.0.2
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\flap9\MyData\Workspaces\SmartTrash\SmartTrashSTM\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\flap9\MyData\Workspaces\SmartTrash\SmartTrashSTM\.project
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-12-13 17:35:53.428
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2019-12-13 17:35:56.261
+!MESSAGE Log4j initialized with config file C:\Users\flap9\MyData\Workspaces\SmartTrash\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 17:36:01.226
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 17:36:01.237
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 17:36:01.323
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 17:36:01.334
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 17:36:01.347
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 17:36:01.358
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 17:36:01.369
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 17:36:01.389
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-12-13 17:36:05.951
+!MESSAGE Started RMI Server, listening on port 41337

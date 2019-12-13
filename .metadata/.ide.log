@@ -575,3 +575,299 @@
 2019-12-13 12:17:08,357 [INFO] ProjectBuilder:2232 - Time for Generating toolchain IDE Files: 15619mS.
 2019-12-13 12:17:08,358 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 0mS.
 2019-12-13 12:17:08,363 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 0mS.
+2019-12-13 12:19:46,762 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 12:19:51,237 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:19:51,238 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:19:51,239 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:19:51,240 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:19:51,241 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:19:51,242 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:19:51,538 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 12:19:51,766 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 12:23:17,978 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 498168736 Bytes (1073741824)
+2019-12-13 12:23:17,981 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:17,982 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:17,984 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:17,986 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:23:17,989 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:23:17,990 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:20,737 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 508128168 Bytes (1073741824)
+2019-12-13 12:23:20,740 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:20,741 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:20,743 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:20,744 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:23:20,746 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 12:23:20,747 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 12:23:20,871 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: SPI
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: I2S
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: SYS
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: RCC
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: I2C
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USB_OTG_FS
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: NVIC
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USB_HOST
+2019-12-13 12:23:20,872 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USART
+2019-12-13 12:23:20,873 [INFO] CodeGenerator:583 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.3.0.201907110903\\db\
+2019-12-13 12:23:20,877 [WARN] IP:1918 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2019-12-13 12:23:20,877 [WARN] IP:1918 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2019-12-13 12:23:21,028 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\license.tmp_save
+2019-12-13 12:23:21,098 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\license.tmp
+2019-12-13 12:23:21,155 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\gpio.tmp_save
+2019-12-13 12:23:22,438 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\gpio.tmp
+2019-12-13 12:23:22,440 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:22,496 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2019-12-13 12:23:22,578 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_vars.tmp
+2019-12-13 12:23:22,604 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2019-12-13 12:23:22,680 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_inc.tmp
+2019-12-13 12:23:22,721 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2019-12-13 12:23:22,812 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2019-12-13 12:23:22,846 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2019-12-13 12:23:22,946 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_Msp.tmp
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2S
+2019-12-13 12:23:23,916 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SPI
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:23,931 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 12:23:23,978 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usb_host.c_save
+2019-12-13 12:23:24,072 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usb_host.c
+2019-12-13 12:23:24,087 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usb_host.h_save
+2019-12-13 12:23:24,150 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usb_host.h
+2019-12-13 12:23:24,166 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_conf.h_save
+2019-12-13 12:23:24,244 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_conf.h
+2019-12-13 12:23:24,275 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_conf.c_save
+2019-12-13 12:23:24,353 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_conf.c
+2019-12-13 12:23:24,384 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_platform.c_save
+2019-12-13 12:23:24,462 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_platform.c
+2019-12-13 12:23:24,478 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_platform.h_save
+2019-12-13 12:23:24,541 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_platform.h
+2019-12-13 12:23:24,541 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-13 12:23:24,541 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 12:23:24,587 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_it.c_save
+2019-12-13 12:23:24,697 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_it.c
+2019-12-13 12:23:24,728 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_it.h_save
+2019-12-13 12:23:24,822 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_it.h
+2019-12-13 12:23:24,862 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_hal_msp.c_save
+2019-12-13 12:23:25,008 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_hal_msp.c
+2019-12-13 12:23:25,025 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\system.tmp_save
+2019-12-13 12:23:25,068 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\system.tmp
+2019-12-13 12:23:25,097 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_hal_conf.h_save
+2019-12-13 12:23:25,210 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_hal_conf.h
+2019-12-13 12:23:25,223 [WARN] IPConfigManager:2562 - IP not found : gpio
+2019-12-13 12:23:25,223 [WARN] CodeGenerator:2617 - IP not found : gpio
+2019-12-13 12:23:25,253 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\main.h_save
+2019-12-13 12:23:25,319 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\main.h
+2019-12-13 12:23:25,349 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\main.c_save
+2019-12-13 12:23:25,486 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\main.c
+2019-12-13 12:23:26,100 [INFO] ProjectBuilder:1570 - Time for Copy HAL[1] : 286mS.
+2019-12-13 12:23:26,103 [INFO] ProjectBuilder:2138 - Project Generator version: 3.4.0
+2019-12-13 12:23:26,372 [INFO] ConfigFileManager:879 - The Die is : DIE413
+2019-12-13 12:23:26,375 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] configName ==Arm Cortex-M4
+2019-12-13 12:23:26,457 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="RAM" access="xrw" start="0x20000000" size="128"
+2019-12-13 12:23:26,458 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="CCMRAM" access="rw" start="0x10000000" size="64"
+2019-12-13 12:23:26,459 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="FLASH" access="rx" start="0x8000000" size="1024"
+2019-12-13 12:23:26,573 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] namefile= STM32CubeIDE
+2019-12-13 12:23:26,575 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============update
+2019-12-13 12:23:28,361 [INFO] ProjectBuilder:2232 - Time for Generating toolchain IDE Files: 2258mS.
+2019-12-13 12:23:28,362 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 1mS.
+2019-12-13 12:23:28,368 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 0mS.
+2019-12-13 13:27:09,425 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 13:27:09,494 [WARN] IP:1918 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2019-12-13 13:27:09,494 [WARN] IP:1918 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2019-12-13 13:27:09,503 [WARN] IP:1918 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2019-12-13 13:27:09,503 [WARN] IP:1918 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2019-12-13 13:27:11,360 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 13:53:14,419 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 13:53:18,415 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 13:53:18,630 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:05,446 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:07,961 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:09,664 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:10,998 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:12,196 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:13,383 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:14,353 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:15,937 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:17,604 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:31:21,997 [INFO] DbMcusDocs:126 - JSON generation date=Wed Dec 11 18:27:49 ICT 2019 (1576063669)
+2019-12-13 14:31:22,121 [INFO] DbMcusDocs:61 - Found 537 MCUs documents
+2019-12-13 14:31:23,022 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:34:46,812 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:34:47,029 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:34:51,765 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:34:51,766 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:34:51,767 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:34:51,768 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:34:51,769 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:34:51,770 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:34:52,154 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:34:52,194 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:35:05,131 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: component must be showing on the screen to determine its location
+2019-12-13 14:35:05,132 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.getLocationOnScreen_NoTreeLock(Component.java:2062)
+2019-12-13 14:35:05,133 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.getLocationOnScreen(Component.java:2036)
+2019-12-13 14:35:05,133 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.JPopupMenu.show(JPopupMenu.java:948)
+2019-12-13 14:35:05,135 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicComboPopup.show(BasicComboPopup.java:211)
+2019-12-13 14:35:05,136 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicComboPopup.togglePopup(BasicComboPopup.java:1170)
+2019-12-13 14:35:05,137 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicComboPopup$Handler.mousePressed(BasicComboPopup.java:858)
+2019-12-13 14:35:05,138 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.processMouseEvent(Component.java:6536)
+2019-12-13 14:35:05,139 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+2019-12-13 14:35:05,140 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.processEvent(Component.java:6304)
+2019-12-13 14:35:05,141 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Container.processEvent(Container.java:2239)
+2019-12-13 14:35:05,142 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+2019-12-13 14:35:05,143 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+2019-12-13 14:35:05,144 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.dispatchEvent(Component.java:4711)
+2019-12-13 14:35:05,145 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicTableUI$Handler.repostEvent(BasicTableUI.java:948)
+2019-12-13 14:35:05,147 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicTableUI$Handler.adjustSelection(BasicTableUI.java:1110)
+2019-12-13 14:35:05,148 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.plaf.basic.BasicTableUI$Handler.mousePressed(BasicTableUI.java:1038)
+2019-12-13 14:35:05,149 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:280)
+2019-12-13 14:35:05,150 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+2019-12-13 14:35:05,151 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+2019-12-13 14:35:05,152 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+2019-12-13 14:35:05,153 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.processMouseEvent(Component.java:6536)
+2019-12-13 14:35:05,154 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+2019-12-13 14:35:05,155 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.processEvent(Component.java:6304)
+2019-12-13 14:35:05,156 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Container.processEvent(Container.java:2239)
+2019-12-13 14:35:05,157 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+2019-12-13 14:35:05,158 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+2019-12-13 14:35:05,159 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.dispatchEvent(Component.java:4711)
+2019-12-13 14:35:05,160 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+2019-12-13 14:35:05,186 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4532)
+2019-12-13 14:35:05,188 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+2019-12-13 14:35:05,190 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+2019-12-13 14:35:05,191 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.Component.dispatchEvent(Component.java:4711)
+2019-12-13 14:35:05,192 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+2019-12-13 14:35:05,192 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue.access$500(EventQueue.java:97)
+2019-12-13 14:35:05,193 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue$3.run(EventQueue.java:709)
+2019-12-13 14:35:05,194 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue$3.run(EventQueue.java:703)
+2019-12-13 14:35:05,195 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.security.AccessController.doPrivileged(Native Method)
+2019-12-13 14:35:05,196 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+2019-12-13 14:35:05,197 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+2019-12-13 14:35:05,198 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue$4.run(EventQueue.java:733)
+2019-12-13 14:35:05,199 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue$4.run(EventQueue.java:731)
+2019-12-13 14:35:05,200 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.security.AccessController.doPrivileged(Native Method)
+2019-12-13 14:35:05,201 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+2019-12-13 14:35:05,202 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+2019-12-13 14:35:05,203 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+2019-12-13 14:35:05,204 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+2019-12-13 14:35:05,205 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+2019-12-13 14:35:05,206 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+2019-12-13 14:35:05,207 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+2019-12-13 14:35:05,208 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2019-12-13 14:40:56,334 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 779064568 Bytes (1073741824)
+2019-12-13 14:40:56,336 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:56,337 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:56,338 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:56,339 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:40:56,340 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:40:56,341 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:58,708 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 794793208 Bytes (1073741824)
+2019-12-13 14:40:58,712 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:58,714 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:58,715 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:58,717 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:40:58,718 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isRootSelectionSupported
+2019-12-13 14:40:58,719 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============isUnderRootDefaultMode
+2019-12-13 14:40:58,851 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: SPI
+2019-12-13 14:40:58,851 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: TIM1_8
+2019-12-13 14:40:58,851 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: I2S
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: SYS
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: RCC
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: I2C
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USB_OTG_FS
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: NVIC
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USB_HOST
+2019-12-13 14:40:58,852 [INFO] BlockDiagram:1862 - set Specific Code input for plugin: USART
+2019-12-13 14:40:58,853 [INFO] CodeGenerator:583 - code generatio: config db path: C:\ST\STM32CubeIDE_1.0.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.3.0.201907110903\\db\
+2019-12-13 14:40:58,857 [WARN] IP:1918 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2019-12-13 14:40:58,857 [WARN] IP:1918 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2019-12-13 14:40:59,034 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\license.tmp_save
+2019-12-13 14:40:59,088 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\license.tmp
+2019-12-13 14:40:59,145 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\gpio.tmp_save
+2019-12-13 14:40:59,264 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\gpio.tmp
+2019-12-13 14:40:59,267 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:40:59,316 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2019-12-13 14:40:59,368 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_vars.tmp
+2019-12-13 14:40:59,392 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2019-12-13 14:40:59,443 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_inc.tmp
+2019-12-13 14:40:59,485 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2019-12-13 14:40:59,547 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2019-12-13 14:40:59,574 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2019-12-13 14:40:59,743 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\usb_otg_fs_Msp.tmp
+2019-12-13 14:41:00,226 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,227 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2C
+2019-12-13 14:41:00,228 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,229 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,231 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for I2S
+2019-12-13 14:41:00,231 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,233 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,234 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SPI
+2019-12-13 14:41:00,235 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,236 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,237 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for SYS
+2019-12-13 14:41:00,238 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,239 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,240 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for TIM
+2019-12-13 14:41:00,241 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,242 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,243 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for USART
+2019-12-13 14:41:00,243 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,245 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2019-12-13 14:41:00,284 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usb_host.c_save
+2019-12-13 14:41:00,371 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usb_host.c
+2019-12-13 14:41:00,399 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usb_host.h_save
+2019-12-13 14:41:00,469 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usb_host.h
+2019-12-13 14:41:00,492 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_conf.h_save
+2019-12-13 14:41:00,560 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_conf.h
+2019-12-13 14:41:00,592 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_conf.c_save
+2019-12-13 14:41:00,675 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_conf.c
+2019-12-13 14:41:00,694 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_platform.c_save
+2019-12-13 14:41:00,756 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\usbh_platform.c
+2019-12-13 14:41:00,776 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_platform.h_save
+2019-12-13 14:41:00,837 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\usbh_platform.h
+2019-12-13 14:41:00,839 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Debug : prepare data for NVIC
+2019-12-13 14:41:00,840 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2019-12-13 14:41:00,872 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_it.c_save
+2019-12-13 14:41:00,951 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_it.c
+2019-12-13 14:41:00,970 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_it.h_save
+2019-12-13 14:41:01,027 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_it.h
+2019-12-13 14:41:01,062 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_hal_msp.c_save
+2019-12-13 14:41:01,195 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\stm32f4xx_hal_msp.c
+2019-12-13 14:41:01,220 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\system.tmp_save
+2019-12-13 14:41:01,276 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\MXTmpFiles\system.tmp
+2019-12-13 14:41:01,310 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_hal_conf.h_save
+2019-12-13 14:41:01,405 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\stm32f4xx_hal_conf.h
+2019-12-13 14:41:01,421 [WARN] IPConfigManager:2562 - IP not found : TIM
+2019-12-13 14:41:01,421 [WARN] IPConfigManager:2562 - IP not found : gpio
+2019-12-13 14:41:01,421 [WARN] CodeGenerator:2617 - IP not found : TIM
+2019-12-13 14:41:01,422 [WARN] CodeGenerator:2617 - IP not found : gpio
+2019-12-13 14:41:01,453 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\main.h_save
+2019-12-13 14:41:01,518 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Inc\main.h
+2019-12-13 14:41:01,552 [INFO] CodeEngine:190 - oldGeneratedFile, C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\main.c_save
+2019-12-13 14:41:01,902 [INFO] CodeEngine:208 - Generated code: C:\Users\60310203\STM32CubeIDE\SmartTrash\SmartTrashSTM\Src\main.c
+2019-12-13 14:41:03,141 [INFO] ProjectBuilder:1570 - Time for Copy HAL[1] : 785mS.
+2019-12-13 14:41:03,143 [INFO] ProjectBuilder:2138 - Project Generator version: 3.4.0
+2019-12-13 14:41:03,319 [INFO] ConfigFileManager:879 - The Die is : DIE413
+2019-12-13 14:41:03,322 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] configName ==Arm Cortex-M4
+2019-12-13 14:41:03,400 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="RAM" access="xrw" start="0x20000000" size="128"
+2019-12-13 14:41:03,401 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="CCMRAM" access="rw" start="0x10000000" size="64"
+2019-12-13 14:41:03,402 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] memory ==name="FLASH" access="rx" start="0x8000000" size="1024"
+2019-12-13 14:41:03,514 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] namefile= STM32CubeIDE
+2019-12-13 14:41:03,515 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] method name===============update
+2019-12-13 14:41:04,077 [INFO] ProjectBuilder:2232 - Time for Generating toolchain IDE Files: 934mS.
+2019-12-13 14:41:04,077 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 0mS.
+2019-12-13 14:41:04,084 [INFO] ProjectBuilder:1461 - Time for Copy CMSIS : 0mS.
+2019-12-13 14:47:57,585 [INFO] BlockDiagram:1818 - stop enableDisableButtons
+2019-12-13 14:48:26,629 [INFO] Activator:176 - 
+
+
+2019-12-13 14:48:26,644 [INFO] Activator:177 - !SESSION log4j initialized

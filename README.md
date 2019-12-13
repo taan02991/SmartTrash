@@ -4,9 +4,13 @@
 ## Pin 
 
 ### servo
-PA3 - NodeMCU.TX
-PA2 - NodeMCU.RX
-PD12 - servo.orange #PWM TIM1_CH1
+ORANGE  - PD12 # PWM TIM4_CH1
+RED     - 5V
+BROWN   - GND
+
+### nodeMCU
+D5 - PA3
+D6 - PA2
 
 ### inner ultra sonic
 

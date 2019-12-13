@@ -1,0 +1,8 @@
+# ignore every file in SmartTrashSTM
+SmartTrashSTM/*
+
+# except main, ioc
+!SmartTrashSTM/Src
+!SmartTrashSTM/SmartTrashSTM.ioc
+SmartTrashSTM/Src/*
+!SmartTrashSTM/Src/main.c

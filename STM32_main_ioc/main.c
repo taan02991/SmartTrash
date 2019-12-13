@@ -49,6 +49,7 @@ I2S_HandleTypeDef hi2s3;
 
 SPI_HandleTypeDef hspi1;
 
+TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
@@ -61,6 +62,7 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_I2S3_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_TIM1_Init(void);
 static void MX_TIM4_Init(void);
 void MX_USB_HOST_Process(void);
 
@@ -79,6 +81,39 @@ void servo_write(int degree)
 	else if (degree == 180) { dutyCycle = 2500; }
 	else { dutyCycle = 500; }
 	__HAL_TIM_SetCompare(&htim4, TIM_CHANNEL_1, dutyCycle);
+}
+
+void delay (uint32_t us)
+{
+	__HAL_TIM_SET_COUNTER(&htim1, 0);
+	while ((__HAL_TIM_GET_COUNTER(&htim1))<us);
+}
+
+uint32_t hcsr04_read (uint16_t trigger, uint16_t echo)
+{
+	double local_time=0;
+	HAL_GPIO_WritePin(GPIOA, trigger, GPIO_PIN_RESET);  // pull the TRIG pin HIGH
+	HAL_Delay(1);  // wait for 2 us
+
+
+	HAL_GPIO_WritePin(GPIOA, trigger, GPIO_PIN_SET);  // pull the TRIG pin HIGH
+	HAL_Delay(1);  // wait for 10 us
+	HAL_GPIO_WritePin(GPIOA, trigger, GPIO_PIN_RESET);  // pull the TRIG pin low
+
+	// read the time for which the pin is high
+
+	while (!(HAL_GPIO_ReadPin(GPIOA, echo)));  // wait for the ECHO pin to go high
+	while (HAL_GPIO_ReadPin(GPIOA, echo))    // while the pin is high
+	 {
+		local_time++;   // measure time for which the pin is high
+		delay (2);
+	 }
+	HAL_Delay(1);
+	return local_time;
+}
+
+double dist(int sensor_time){
+	return sensor_time * 0.034;
 }
 /* USER CODE END 0 */
 
@@ -114,11 +149,13 @@ int main(void)
   MX_I2C1_Init();
   MX_I2S3_Init();
   MX_SPI1_Init();
+  MX_TIM1_Init();
   MX_TIM4_Init();
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim4);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start(&htim1);
 
   servo_write(0);
   /* USER CODE END 2 */
@@ -289,6 +326,52 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
+
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 83;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 10000;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
 
 }
 

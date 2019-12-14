@@ -34,6 +34,29 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define inner_trigger_pin 	GPIO_PIN_4 // trigger
+#define inner_echo_pin 		GPIO_PIN_5 // echo
+#define outer_trigger_pin 	GPIO_PIN_6 // trigger
+#define outer_echo_pin 		GPIO_PIN_7 // echo
+
+#define MAX_LID_TRIGGER_COUNTER 2
+#define LID_OPEN_TH 15.0
+#define LID_CLOSE_TH 20.0
+
+// state
+#define CLOSE 0
+#define OPENING 1
+#define OPEN 2
+#define CLOSING 3
+#define FOREVER_OPEN 9
+
+#define OPEN_TICK 1000
+#define CLOSE_TICK 1200
+
+#define OPEN_ANGLE 180
+#define CLOSE_ANGLE 0
+
+#define SAMPLING_NUMBER 5
 
 /* USER CODE END PD */
 
@@ -45,25 +68,24 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
-I2S_HandleTypeDef hi2s3;
-
-SPI_HandleTypeDef hspi1;
-
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim4;
 
-/* USER CODE BEGIN PV */
+UART_HandleTypeDef huart2;
 
+/* USER CODE BEGIN PV */
+uint8_t lid_state = 0; //0-close 1-opening 2-open 3-closing 9-forever-open
+uint8_t lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+uint32_t lid_action_last_tick = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
-static void MX_I2S3_Init(void);
-static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_USART2_UART_Init(void);
 void MX_USB_HOST_Process(void);
 
 /* USER CODE BEGIN PFP */
@@ -75,6 +97,7 @@ void MX_USB_HOST_Process(void);
 
 void servo_write(int degree)
 {
+	// can only assign 0 90 180 degree (CCW)
 	int dutyCycle = 0;
 	if (degree == 0) { dutyCycle = 500; }
 	else if (degree == 90) { dutyCycle = 1500; }
@@ -89,12 +112,11 @@ void delay (uint32_t us)
 	while ((__HAL_TIM_GET_COUNTER(&htim1))<us);
 }
 
-uint32_t hcsr04_read (uint16_t trigger, uint16_t echo)
+uint32_t us_read (uint16_t trigger, uint16_t echo)
 {
 	double local_time=0;
 	HAL_GPIO_WritePin(GPIOA, trigger, GPIO_PIN_RESET);  // pull the TRIG pin HIGH
 	HAL_Delay(1);  // wait for 2 us
-
 
 	HAL_GPIO_WritePin(GPIOA, trigger, GPIO_PIN_SET);  // pull the TRIG pin HIGH
 	HAL_Delay(1);  // wait for 10 us
@@ -114,6 +136,145 @@ uint32_t hcsr04_read (uint16_t trigger, uint16_t echo)
 
 double dist(int sensor_time){
 	return sensor_time * 0.034;
+}
+
+double uart_send_q(double distance)
+{
+	char buffer[10];
+	int len = sprintf(buffer, "<Q:%.2lf>", distance);
+	HAL_UART_Transmit(&huart2, buffer, len, 1000);
+}
+
+double uart_send_o()
+{
+	HAL_UART_Transmit(&huart2, "<O>", 3, 1000);
+}
+
+double uart_send_c()
+{
+	HAL_UART_Transmit(&huart2, "<C>", 3, 1000);
+}
+
+void trash_measure_process()
+{
+	double accumulator = 0;
+	for (int i=0; i<SAMPLING_NUMBER; i++)
+	{
+		accumulator += dist(us_read(inner_trigger_pin, inner_echo_pin));
+	}
+	uart_send_q(accumulator/(double)SAMPLING_NUMBER);
+	return;
+}
+
+void main_process()
+{
+	double distance =  dist(us_read(outer_trigger_pin, outer_echo_pin));
+
+	if ( lid_state == CLOSE )
+	{
+		servo_write(CLOSE_ANGLE);
+
+		if ( distance < LID_OPEN_TH )
+		{
+			lid_trigger_counter--; // have to in distance for MAX_LID_TRIGGER_COUNTER time
+		} else {
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+		if (lid_trigger_counter <= 0)
+		{
+			// goto next state
+			uart_send_o();
+			lid_state = OPENING;
+			lid_action_last_tick = HAL_GetTick();
+		}
+
+	} else
+	if ( lid_state == OPENING )
+	{
+		//open until fully open
+		servo_write(OPEN_ANGLE);
+		if (HAL_GetTick() - lid_action_last_tick > OPEN_TICK)
+		{
+			// goto next state
+			lid_state = OPEN;
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+
+	} else
+	if ( lid_state == OPEN )
+	{
+		servo_write(OPEN_ANGLE);
+
+		if ( distance > LID_CLOSE_TH )
+		{
+			lid_trigger_counter--;
+		} else {
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+
+		if (lid_trigger_counter <= 0)
+		{
+			// goto next state
+			lid_state = CLOSING;
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+			lid_action_last_tick = HAL_GetTick();
+		}
+	} else
+	if ( lid_state == CLOSING )
+	{
+		servo_write(CLOSE_ANGLE);
+
+		if ( distance < LID_OPEN_TH )
+		{
+			lid_trigger_counter--;
+		} else {
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+
+		if (lid_trigger_counter <= 0)
+		{
+			// goto next state
+			lid_state = OPEN;
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+		if (HAL_GetTick() - lid_action_last_tick < CLOSE_TICK)
+		{
+			// goto next state
+			uart_send_c();
+			trash_measure_process();
+			lid_state = CLOSE;
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+		}
+
+	} else
+	if (lid_state == FOREVER_OPEN)
+	{
+		servo_write(OPEN_ANGLE);
+	}
+
+}
+
+void check_open_forever_button_process()
+{
+    if (HAL_GPIO_ReadPin(GPIOA, B1_Pin))
+    {
+        if (lid_state != FOREVER_OPEN)
+        {
+        	uart_send_o();
+        	lid_state = FOREVER_OPEN;
+        } else {
+			// goto next state
+			lid_state = CLOSING;
+			lid_trigger_counter = MAX_LID_TRIGGER_COUNTER;
+			lid_action_last_tick = HAL_GetTick();
+        }
+        HAL_Delay(30);
+        while (HAL_GPIO_ReadPin(GPIOA, B1_Pin))
+        {
+            HAL_Delay(1);
+        }
+        HAL_Delay(30);
+    }
 }
 /* USER CODE END 0 */
 
@@ -147,10 +308,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_I2S3_Init();
-  MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM4_Init();
+  MX_USART2_UART_Init();
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim4);
@@ -168,7 +328,9 @@ int main(void)
     MX_USB_HOST_Process();
 
     /* USER CODE BEGIN 3 */
-
+    // MAIN
+    main_process();
+    check_open_forever_button_process();
   }
   /* USER CODE END 3 */
 }
@@ -181,7 +343,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
   /** Configure the main internal regulator output voltage 
   */
@@ -211,13 +372,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_I2S;
-  PeriphClkInitStruct.PLLI2S.PLLI2SN = 192;
-  PeriphClkInitStruct.PLLI2S.PLLI2SR = 2;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
@@ -254,78 +408,6 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
-
-}
-
-/**
-  * @brief I2S3 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_I2S3_Init(void)
-{
-
-  /* USER CODE BEGIN I2S3_Init 0 */
-
-  /* USER CODE END I2S3_Init 0 */
-
-  /* USER CODE BEGIN I2S3_Init 1 */
-
-  /* USER CODE END I2S3_Init 1 */
-  hi2s3.Instance = SPI3;
-  hi2s3.Init.Mode = I2S_MODE_MASTER_TX;
-  hi2s3.Init.Standard = I2S_STANDARD_PHILIPS;
-  hi2s3.Init.DataFormat = I2S_DATAFORMAT_16B;
-  hi2s3.Init.MCLKOutput = I2S_MCLKOUTPUT_ENABLE;
-  hi2s3.Init.AudioFreq = I2S_AUDIOFREQ_96K;
-  hi2s3.Init.CPOL = I2S_CPOL_LOW;
-  hi2s3.Init.ClockSource = I2S_CLOCK_PLL;
-  hi2s3.Init.FullDuplexMode = I2S_FULLDUPLEXMODE_DISABLE;
-  if (HAL_I2S_Init(&hi2s3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2S3_Init 2 */
-
-  /* USER CODE END I2S3_Init 2 */
-
-}
-
-/**
-  * @brief SPI1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI1_Init(void)
-{
-
-  /* USER CODE BEGIN SPI1_Init 0 */
-
-  /* USER CODE END SPI1_Init 0 */
-
-  /* USER CODE BEGIN SPI1_Init 1 */
-
-  /* USER CODE END SPI1_Init 1 */
-  /* SPI1 parameter configuration*/
-  hspi1.Instance = SPI1;
-  hspi1.Init.Mode = SPI_MODE_MASTER;
-  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
-  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi1.Init.CRCPolynomial = 10;
-  if (HAL_SPI_Init(&hspi1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SPI1_Init 2 */
-
-  /* USER CODE END SPI1_Init 2 */
 
 }
 
@@ -425,6 +507,39 @@ static void MX_TIM4_Init(void)
 }
 
 /**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -446,6 +561,9 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(OTG_FS_PowerSwitchOn_GPIO_Port, OTG_FS_PowerSwitchOn_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4|GPIO_PIN_6, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, LD3_Pin|LD5_Pin|LD6_Pin|Audio_RST_Pin, GPIO_PIN_RESET);
@@ -478,6 +596,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : PA4 PA6 */
+  GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_6;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA5 PA7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : BOOT1_Pin */
   GPIO_InitStruct.Pin = BOOT1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -498,6 +629,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : I2S3_MCK_Pin I2S3_SCK_Pin I2S3_SD_Pin */
+  GPIO_InitStruct.Pin = I2S3_MCK_Pin|I2S3_SCK_Pin|I2S3_SD_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Alternate = GPIO_AF6_SPI3;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : OTG_FS_OverCurrent_Pin */
   GPIO_InitStruct.Pin = OTG_FS_OverCurrent_Pin;

@@ -3,8 +3,12 @@
 #include <ESP8266WiFiMulti.h>
 #include <String>
 #include <string.h>
+#include <string>
 #include <FirebaseArduino.h>
 #include <ArduinoJson.h>
+#include <sstream> 
+#include <stdlib.h>
+#include <stdio.h>
 
 #include <NTPClient.h>
 #include <WiFiUdp.h>
@@ -20,6 +24,7 @@ boolean newData = false;
 
 #define FIREBASE_HOST "smarttrash-55130.firebaseio.com"
 #define FIREBASE_KEY "dSyqDhjaYVj4nOEuJt3UaBnzijPO4A4AuGzaZ3Da"
+using namespace std; 
 
 void setup() {
 
@@ -49,39 +54,15 @@ void setup() {
   Serial.println();
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
-//  mySerial.println("fuckker");
   timeClient.begin();
   timeClient.setTimeOffset(25200);
   Firebase.begin(FIREBASE_HOST, FIREBASE_KEY);
-//  Firebase.set("name", "Wio Link 001");
-//  Firebase.pushString("time/close", T());
-//  Firebase.pushString("time/open", T());
-//  Firebase.setString("recentGarbage","0.25");
-//  StaticJsonBuffer<200> jsonBuffer;
-//  JsonObject& valueObject = jsonBuffer.createObject();
-//  valueObject["quantity"] = "0.60";
-//  valueObject["timestamp"] = T();
-//  Firebase.push("garbage",valueObject);
 }
 
 void loop() {
   if(WiFi.status()== WL_CONNECTED){
     recvWithStartEndMarkers();
     showNewData();
-//    if(mySerial.available())    //Checks is there any data in buffer 
-//    {
-//      // Serial.println("We got:");
-//      Serial.println(char(mySerial.read()));  //Read serial data byte and send back to serial monitor
-//    }
-////    else
-////    {
-////      mySerial.println("kuy");
-//////      Serial.println("."); //Print Hello word every one second
-////      delay(200);                      // Wait for a second
-////    }
-    
-//    T();
-    delay(1000);
   }
 }
 
@@ -130,15 +111,18 @@ void showNewData() {
         Serial.println(receivedChars);
         if(receivedChars[0] == 'O') {
           String timestamp = T();
+          Serial.println(timestamp);
+          Serial.println("open");
           Firebase.pushString("time/open", timestamp);
         }else if (receivedChars[0] == 'Q'){
           String timestamp = T();
-          Serial.println("QUANTITY for q : " + getQuantity(receivedChars));
-          Firebase.setString("recentGarbage",getQuantity(receivedChars));
+          String res = getQuantity(receivedChars);
+          Serial.println("QUANTITY for q : " + res);
+          Firebase.setString("recentGarbage",res);
           Firebase.pushString("time/close", timestamp);
           StaticJsonBuffer<200> jsonBuffer;
           JsonObject& valueObject = jsonBuffer.createObject();
-          valueObject["quantity"] = getQuantity(receivedChars);
+          valueObject["quantity"] = res;
           valueObject["timestamp"] = T();
           Firebase.push("garbageHistory",valueObject);
         }        
@@ -146,11 +130,29 @@ void showNewData() {
     }
 }
 
+//Float as String With Precision!
+String rounded(float var) 
+{ 
+    float value = (int)(var * 100 + .5); 
+    return String((float)value / 100); 
+} 
+
 String getQuantity(String s){
-  // check integer
+  Serial.println("receiving " + s);
   String result = s.substring(2, s.length());
-  Serial.println(result);
-  return result;
+  Serial.println("converted : " + result);
+  float x = 0; 
+  x = result.toFloat();
+  x = 1-x/15;
+  Serial.println("value");
+  Serial.println(x);
+  if(x <= 0) {
+    return "0.00";
+  } else if(x >= 1){
+    return "1.00";
+  } else {
+    return rounded(x);
+  }
 }
 
 String getValue(String data, char separator, int index)

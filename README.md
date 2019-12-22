@@ -1,5 +1,6 @@
 # Smart Trash project
 ## subject : embeded lab
+![](trash.gif)
 
 ## Pin 
 
